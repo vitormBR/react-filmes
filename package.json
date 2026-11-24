@@ -1,0 +1,24 @@
+{
+  "name": "filmes-crud-autenticacao",
+  "version": "1.0.0",
+  "description": "CRUD de filmes com Express, Handlebars, React, Vite, Sequelize, SQLite e autenticação",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "create-admin": "node criarUsuario.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-sqlite3": "^0.9.13",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.4",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7",
+    "cors": "^2.8.5"
+  }
+}

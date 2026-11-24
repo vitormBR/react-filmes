@@ -1,0 +1,22 @@
+<div class="container" style="max-width:480px; margin-top:35px">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">Entrar no sistema</span>
+            <p class="grey-text">Informe seu e-mail e sua senha para continuar.</p>
+            {{#if erro}}
+                <div class="card-panel red lighten-4 red-text text-darken-4">E-mail ou senha inválidos.</div>
+            {{/if}}
+            <form action="/login" method="POST">
+                <div class="input-field">
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="senha" id="senha" required>
+                    <label for="senha">Senha</label>
+                </div>
+                <button type="submit" class="btn blue darken-2">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>

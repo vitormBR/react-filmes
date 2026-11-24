@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Filmes</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body { background: #f5f6f8; min-height: 100vh; display: flex; flex-direction: column; }
+        main { flex: 1; padding: 28px 0; }
+        .page-header { margin-bottom: 24px; }
+        .page-header h3 { margin-bottom: 6px; }
+        .action-buttons { margin: 18px 0; }
+        .table-card { overflow-x: auto; padding: 8px 18px; }
+        .form-card { max-width: 850px; }
+        .detail-item { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .detail-label { color: #777; font-size: .85rem; }
+        .detail-value { font-size: 1rem; }
+        .empty-state { text-align: center; padding: 24px !important; color: #777; }
+        footer { padding: 18px 0; }
+    </style>
+</head>
+<body>
+    <nav class="blue darken-3">
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo" style="font-size:1.5rem">Sistema de Filmes</a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                {{#if usuario}}
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/filmes">Filmes (Handlebars)</a></li>
+                    <li><a href="http://localhost:5173" target="_blank" rel="noopener">Lista React</a></li>
+                    <li><a href="/diretores">Diretores</a></li>
+                    <li><a href="/artistas">Artistas</a></li>
+                    <li><a href="/ficha-tecnica">Ficha Técnica</a></li>
+                    <li><a>{{usuario.nome}}</a></li>
+                    <li>
+                        <form action="/logout" method="POST" style="display:inline">
+                            <button class="btn red darken-2" type="submit">Sair</button>
+                        </form>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-menu">
+        {{#if usuario}}
+            <li><a href="/">Início</a></li>
+            <li><a href="/filmes">Filmes (Handlebars)</a></li>
+            <li><a href="http://localhost:5173" target="_blank" rel="noopener">Lista React</a></li>
+            <li><a href="/diretores">Diretores</a></li>
+            <li><a href="/artistas">Artistas</a></li>
+            <li><a href="/ficha-tecnica">Ficha Técnica</a></li>
+            <li>
+                <form action="/logout" method="POST" style="padding: 8px 16px">
+                    <button class="btn red darken-2" type="submit">Sair</button>
+                </form>
+            </li>
+        {{/if}}
+    </ul>
+
+    <main>{{{body}}}</main>
+
+    <footer class="blue-grey darken-4 white-text center">
+        <div class="container">Sistema de Gerenciamento de Filmes</div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+            M.FormSelect.init(document.querySelectorAll('select'));
+            M.CharacterCounter.init(document.querySelectorAll('textarea'));
+        });
+    </script>
+</body>
+</html>

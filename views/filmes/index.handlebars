@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="page-header"><h3>Filmes</h3><p>Filmes cadastrados no sistema.</p></div>
+    <div class="action-buttons"><a href="/filmes/cadastrar" class="btn blue darken-2"><i class="material-icons left">add</i>Cadastrar Filme</a></div>
+    <div class="card table-card"><table class="striped highlight responsive-table">
+        <thead><tr><th>ID</th><th>Título</th><th>Ano</th><th>Duração</th><th>Gênero</th><th>Classificação</th><th>País</th><th>Diretor</th><th>Detalhes</th></tr></thead>
+        <tbody>{{#each filmes}}<tr><td>{{id}}</td><td><b>{{titulo}}</b></td><td>{{ano}}</td><td>{{#if duracao}}{{duracao}} min{{else}}-{{/if}}</td><td>{{genero}}</td><td>{{clasIndicativa}}</td><td>{{paisOrigem}}</td><td>{{#if diretor}}{{diretor.nome}}{{else}}-{{/if}}</td><td><a href="/filmes/{{id}}" class="btn-small blue"><i class="material-icons">visibility</i></a></td></tr>{{else}}<tr><td colspan="9" class="empty-state">Nenhum filme cadastrado.</td></tr>{{/each}}</tbody>
+    </table></div>
+</div>
