@@ -1,4 +1,4 @@
-Lista de Filmes
+FilmeFlix
 
 alunos: Vitor Miguel , David José , Kayk Gomes
 
